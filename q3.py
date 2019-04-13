@@ -20,7 +20,7 @@ with open("matrix.txt") as f :
             else:
                 #print(number)
                 digits.append(number)
-        digits = [[int(i) for i in digits]]     
+        digits = [[float(i) for i in digits]]     
         matrix.extend(digits)
        
 
@@ -35,15 +35,18 @@ for let in first_line :
 
 
 G = pydot.Dot(graph_type='digraph')
+"""
+letters = [ 'D', 'B', 'S','W','K','L','C','M']
 
-#letters = ['A','B','C','D','E']
-'''
-matrix = np.array([[0, 2, 3, 4, 5],
-[2, 0, 3, 4, 5],
-[3, 3, 0, 4, 5],
-[4, 4, 4, 0, 5],
-[5, 5, 5, 5, 0]])
-'''
+matrix = np.array([[ 0, 32, 48, 51, 50, 48, 98, 148],
+ [32, 0, 26, 34, 29, 33, 84, 136],
+ [48, 26, 0, 42, 44, 44, 92, 152],
+ [51, 34, 42, 0, 44, 38, 86, 142],
+ [50, 29, 44, 44, 0, 24, 89, 142],
+ [48, 33, 44, 38, 24, 0, 90, 142],
+ [98, 84, 92, 86, 89, 90,  0, 148],
+ [148, 138, 152, 142, 142, 142, 148,0]])
+"""
 
 
 while matrix.shape != (2,2) :
@@ -154,7 +157,7 @@ G.add_edge(pydot.Edge(new_node,letters[0]))
 stop = time.time()
 time_taken = stop-start
 print("time taken: ", time_taken)
-G.write_png('treetopology008.png')
+G.write_png('treetopology.png')
  
 
 """ 
